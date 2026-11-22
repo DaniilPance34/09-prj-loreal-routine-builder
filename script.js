@@ -87,8 +87,22 @@ function renderSelected() {
   clearButton.disabled = !chosen.length;
   generateButton.disabled = !chosen.length || busy;
 }
+function formatAIResponse(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^\s*[-*]\s+/gm, "• ");
+}
 function addMessage(role, content) {
-  const bubble = makeElement("div", `message ${role === "user" ? "user-message" : "assistant-message"}`, content);
+  const formattedContent =
+    role === "assistant" ? formatAIResponse(content) : content;
+
+  const bubble = makeElement(
+    "div",
+    `message ${role === "user" ? "user-message" : "assistant-message"}`,
+    formattedContent
+  );
+
   chatWindow.append(bubble);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
