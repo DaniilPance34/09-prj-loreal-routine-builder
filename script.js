@@ -1,6 +1,6 @@
 // Project 9: Product-aware routine builder. No API secrets belong in this file.
 // Paste your class-hosted Cloudflare Worker URL here (it must accept { messages }).
-const WORKER_URL = "";
+const WORKER_URL = "https://loreal-beauty-chatbot.daniilp-8a9.workers.dev";
 const categoryFilter = document.getElementById("categoryFilter");
 const searchInput = document.getElementById("productSearch");
 const productsContainer = document.getElementById("productsContainer");
