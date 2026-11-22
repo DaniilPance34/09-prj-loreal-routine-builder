@@ -253,3 +253,50 @@ body {
 .generate-btn i {
   margin-right: 8px;
 }
+
+/* Project 9 design enhancements */
+:root { --rose: #ff003b; --gold: #e3a535; --ink: #24212a; --muted: #6b6871; }
+body { background: #fffaf8; color: var(--ink); }
+.page-wrapper { max-width: 1180px; }
+.site-header { padding-top: 35px; }
+.site-title { font-weight: 700; letter-spacing: -.02em; }
+.search-section { margin-bottom: 10px; }
+.search-section select { border-color: #e5dce0; background: white; }
+.toolbar-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 10px; }
+.search-label { font-weight: 700; }
+#productSearch { flex: 1; min-width: 180px; padding: 13px 15px; border: 1px solid #d9cdd2; border-radius: 10px; font: inherit; }
+.rtl-label { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; }
+.status-text { margin: 12px 0 22px; color: var(--muted); font-size: 13px; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 18px; }
+.product-card { min-width: 0; border: 2px solid #eee4e7; border-radius: 16px; background: white; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 18px #2b17200c; transition: border-color .2s, transform .2s; }
+.product-card:hover { transform: translateY(-2px); }
+.product-card.is-selected { border-color: var(--rose); box-shadow: 0 5px 22px #ff003b22; }
+.product-image { width: 100%; height: 185px; object-fit: contain; padding: 14px; background: #fff; }
+.product-info { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product-info h3 { font-size: 16px; line-height: 1.35; }
+.brand { color: var(--rose); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.category-pill { align-self: flex-start; background: #fff4e4; color: #8a5d13; padding: 5px 9px; border-radius: 20px; font-size: 11px; text-transform: capitalize; }
+.product-details { font-size: 12px; line-height: 1.55; color: #57525a; }
+.product-details summary { cursor: pointer; color: #a56810; font-weight: 700; }
+.product-details p { margin-top: 8px; }
+.select-btn, .clear-btn, .remove-btn { cursor: pointer; font: inherit; }
+.select-btn { margin-top: auto; border: 1px solid var(--rose); background: white; color: var(--rose); padding: 11px; border-radius: 9px; font-weight: 700; font-size: 12px; }
+.select-btn.active, .select-btn:hover { background: var(--rose); color: white; }
+.selected-products { margin-top: 38px; background: #fff; border: 1px solid #f0e2e4; border-radius: 16px; padding: 24px; }
+.selected-products h2 { margin-bottom: 15px; }
+.selected-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #f1e9eb; padding: 10px 0; font-size: 13px; }
+.remove-btn { background: transparent; border: 0; color: var(--rose); font-size: 12px; font-weight: 700; }
+.clear-btn { margin-top: 16px; background: transparent; border: 1px solid #ccc; padding: 9px 12px; border-radius: 8px; }
+.generate-btn { display: block; width: 100%; margin-top: 15px; background: var(--rose); border: 0; color: white; padding: 15px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.chatbox { border: 1px solid #f0e2e4; background: white; border-radius: 16px; }
+.chat-window { height: 330px; border-radius: 10px; background: #fffaf8; display: flex; flex-direction: column; gap: 12px; }
+.message { padding: 12px 15px; border-radius: 13px; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 92%; font-size: 14px; line-height: 1.6; }
+.assistant-message { align-self: flex-start; background: #f1e8e7; }
+.user-message { align-self: flex-end; background: #ffe0e7; }
+.empty-state { color: #6b6871; padding: 18px; }
+.site-footer { padding-bottom: 30px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+[dir="rtl"] .product-info, [dir="rtl"] .selected-products, [dir="rtl"] .chatbox { text-align: start; }
+@media (max-width: 600px) { .page-wrapper { width: 94%; } .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .product-image { height: 135px; } .product-info { padding: 10px; } .product-info h3 { font-size: 13px; } .selected-products, .chatbox { padding: 15px; } }
+@media (max-width: 380px) { .products-grid { grid-template-columns: 1fr; } }

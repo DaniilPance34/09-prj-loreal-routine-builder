@@ -26,7 +26,8 @@
       <!-- Category Filter -->
       <div class="search-section">
         <select id="categoryFilter">
-          <option value="" disabled selected>Choose a Category</option>
+          <option value="">All Categories</option>
+          <option value="skincare">Skincare & Treatments</option>
           <option value="cleanser">Cleansers</option>
           <option value="moisturizer">Moisturizers & Treatments</option>
           <option value="haircare">Haircare</option>
@@ -39,6 +40,13 @@
         </select>
       </div>
 
+      <div class="toolbar-bottom">
+        <label class="search-label" for="productSearch">Search products</label>
+        <input id="productSearch" type="search" placeholder="Search name, brand, or ingredients…" />
+        <label class="rtl-label"><input type="checkbox" id="rtlToggle" /> RTL layout</label>
+      </div>
+      <p id="statusText" class="status-text" aria-live="polite"></p>
+
       <!-- Products Grid -->
       <div id="productsContainer" class="products-grid"></div>
 
@@ -46,7 +54,8 @@
       <div class="selected-products">
         <h2>Selected Products</h2>
         <div id="selectedProductsList"></div>
-        <button id="generateRoutine" class="generate-btn">
+        <button id="clearSelections" class="clear-btn" type="button">Clear all selections</button>
+        <button id="generateRoutine" class="generate-btn" type="button">
           <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
         </button>
       </div>
@@ -54,7 +63,7 @@
       <!------- Chat Area ------->
       <section class="chatbox">
         <h2>Let's Build Your Routine</h2>
-        <div id="chatWindow" class="chat-window"></div>
+        <div id="chatWindow" class="chat-window" role="log" aria-live="polite"><div class="message assistant-message">Choose products, then generate a personalized routine. You can ask follow-up questions here afterward.</div></div>
 
         <form id="chatForm" class="chat-form">
           <label for="userInput" class="visually-hidden">Message</label>
@@ -75,12 +84,9 @@
 
       <!------- Footer Links ------->
       <footer class="site-footer">
-        <p>&copy; 2025 L'Oréal. All rights reserved.</p>
+        <p>Beauty Routine Builder · Student portfolio project</p>
         <nav>
-          <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
+          <span>Educational demo · Not affiliated with or endorsed by L’Oréal</span>
         </nav>
       </footer>
     </div>
